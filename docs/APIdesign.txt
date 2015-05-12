@@ -14,10 +14,12 @@ API design doc for PC3.
     
   /authenticate -> authentication results
       - authenticates username and password in request
+
 # available to teams
   /run
     /<problem>/<language> -> whether the run was successful
         - starts a score run
+
 # available to supervisors
   /supervise
     /override/<team>/<problem> -> verification of score override

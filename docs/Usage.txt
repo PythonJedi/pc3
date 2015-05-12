@@ -31,16 +31,36 @@ Client:
      - request score change for a team for a problem
      
 Use cases:
-    User wants to see scores
-    <- client must receive score table from server
-    <- server must send score table
-    <- client must request score table from server
-    <- user must ask client to view scores (implied in navigation)
-    <- client must receive verification of username and password authentication
-    <- server must authenticate username and password
-    <- client must request server to authenticate username and password
-    <- user must enter username and password to client
-    <- client must prompt user for username and password
-    <- user must load client
-    <- server must send client to user
-    <- user must request client from server
+    User is logged in to the system:
+    <- client displays verification of username and password authentication
+    <- server sends verification of authentication and userlevel
+    <- server authenticates username and password, adding username to session
+    <- client requests server to authenticate username and password
+    <- user   submits username and password to client
+    <- client prompts user for username and password
+    <- user   loads client
+    <- server sends client page to user
+    <- user   requests client from server
+    
+    User is logged out of the system:
+    <- client receives verification of logout from server (presumably redirects to login)
+    <- server removes username from session
+    <- client sends logout request to server
+    <- user   requests client to logout
+    
+    User sees scores
+    <- client displays score table
+    <- client receives score table from server
+    <- server sends score table
+    <- client requests score table from server
+    <- user   requests client to view scores
+    <- user   is logged in
+    
+    Supervisor kills malfunctioning run
+    <- client displays verification of dead process
+    <- server sends verification of dead process
+    <- server kills process
+    <- server verifies user is supervisor
+    <- client requests server to kill run
+    <- user   requests client to kill run
+    <- user   is logged in as supervisor
