@@ -5,7 +5,6 @@ API design doc for PC3.
 
 /   -> login page
 /api
-# Available to all users
   /info
     /problems -> problem listing
       /<problem> -> problem description
@@ -15,12 +14,11 @@ API design doc for PC3.
   /authenticate -> authentication results
       - authenticates username and password in request
 
-# available to teams
   /run
-    /<problem>/<language> -> whether the run was successful
+    /<problem>/submit/<language> -> whether the run was successful
         - starts a score run
+    /<problem>/info -> list of passs/fail/info/error for a team's runs
 
-# available to supervisors
   /supervise
     /override/<team>/<problem> -> verification of score override
         - manually overrides scoring for a problem

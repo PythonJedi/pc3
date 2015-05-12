@@ -3,16 +3,17 @@ Usage document for PC3
 Server:
     Available to all users:
      - authenticate client
-     - get scoring table
-     - get a listing of problems
-     - get a problem's description
+     - request scoring table
+     - request a listing of problems
+     - request a problem's description
      
     Also available to team clients:
      - run team solutions and add to score
+     - request results of previous runs
 
     Also Available to supervisor clients:
      - override a team's completion state or score on a problem
-     - get active scoring runs
+     - request active scoring runs
      - kill a team's scoring run (presumably malfunctioning)
     
 Client:
@@ -24,6 +25,7 @@ Client:
      
     Also Available to teams:
      - submit scoring run
+     - view pass/fail/time and errors for previous submissions
      
     Also Available to supervisors:
      - view active scoring runs
