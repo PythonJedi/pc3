@@ -58,6 +58,53 @@ Use cases:
     <- user   requests client to view scores
     <- user   is logged in
     
+    Team has confirmation of scoring run
+    <- client displays confirmation of scoring run completion
+    <- server sends confirmation of scoring run to client and logs results
+    <- server runs team's code
+    <- client sends team's code to server
+    <- team   requests client to send scoring run
+    <- user   is logged in as a team
+    
+    Team sees previous results
+    <- client displays previous results
+    <- server sends previous results to client
+    <- client requests server for previous results
+    <- team   requests client for previous results
+    <- user   is logged in as a team
+    
+    User sees problem list
+    <- client displays list of problems
+    <- server sends list of problems to client
+    <- client requests server for problem listing
+    <- user   requests client for list of problems
+    <- user   is logged in
+    
+    User sees problem description
+    <- client displays problem description
+    <- server sends problem description to client
+    <- client requests server for a problem description
+    <- user   requests client for problem description
+    <- user   sees problem list
+    <- user   is logged in
+    
+    Supervisor modifies team's score
+    <- client displays verification of team score modification
+    <- server sends verification of score modification to client
+    <- server changes team's score
+    <- server verifies user is supervisor
+    <- client requests server to change a team's score
+    <- user   requests client to change a team's score
+    <- user   is logged in as supervisor
+    <- user   sees scores
+    
+    Supervisor sees current runs
+    <- client displays list of current runs
+    <- server sends list of current runs
+    <- client requests server for current runs
+    <- user   requests client for current runs
+    <- user   is logged in as supervisor
+    
     Supervisor kills malfunctioning run
     <- client displays verification of dead process
     <- server sends verification of dead process
@@ -65,4 +112,5 @@ Use cases:
     <- server verifies user is supervisor
     <- client requests server to kill run
     <- user   requests client to kill run
+    <- user   sees current runs
     <- user   is logged in as supervisor
