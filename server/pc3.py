@@ -70,7 +70,7 @@ def info_scores():
     return json.dumps(util.scoreboard.getRanks())
     
 @app.route("/api/supervise/override/<team>/<problem>", methods=["POST"])
-@flaskutils.requires_auth # Need to implement a decorator for requiring supervisor perms
+@flaskUtils.requires_auth # Need to implement a decorator for requiring supervisor perms
 def supervise_override(team, problem):
     """manually override a team's score for a problem."""
     
@@ -83,7 +83,7 @@ def supervise_override(team, problem):
         return json.dumps({"status":False, "message":"Manual overrides not implemented yet"})
         
 @app.route("/api/supervise/kill/<team>/<problem>/<run>")
-@flaskutils.requires_auth # See note on supervise_override
+@flaskUtils.requires_auth # See note on supervise_override
 def supervise_kill(team, problem, run):
     """kill a malfunctioning run"""
     # I have no idea how this should be implemented.
